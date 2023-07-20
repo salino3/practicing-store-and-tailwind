@@ -1,0 +1,42 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+* {
+  font-family: "Fira Sans", sans-serif;
+}
+
+.link {
+  text-decoration: none;
+  color: #4A4E69;
+}
+
+.link.nuxt-link-exact-active {
+ color: orange;
+}
+
+button {
+  padding: 0px 3px;
+}
+
+
+@layer base {
+  .default {
+  background: #9A8C98;
+  height: 100vh;
+  width: 100wh;
+  color: white;
+  }
+
+  .auth {
+    color: #219EBC;
+    background: #FAEDCD;
+    height: 100vh;
+    width: 100wh;
+  }
+}
+
