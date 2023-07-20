@@ -5,10 +5,17 @@
 
 
 
-
 * {
   font-family: "Fira Sans", sans-serif;
 }
+
+*::-webkit-scrollbar {
+    display: none;
+  }
+
+.default::-webkit-scrollbar {
+    display: none;
+  }
 
 .link {
   text-decoration: none;
@@ -35,6 +42,9 @@ button {
     height: auto;
     width: 100wh;
   }
+
+
+
 
   .auth {
     color: #219EBC;

@@ -4,10 +4,19 @@
    <div class="container">
       <div class="box box1">
         <div class="boxCounter">
-          <span>{{ $store.state.title }}: </span>
-          <button @click="increment" >
-            Increment me! <span class="spanCounter">{{ $store.state.counter }}</span>
-          </button>
+          <p>{{ $store.state.title }}:&nbsp; <span class="spanCounter">{{ $store.state.counter }}</span></p>
+         <div class="boxBtns">
+          <div class="boxBtn" @click="increment">
+            <button class="btn1 flipSide-360"  >
+              Plus 1
+            </button>
+          </div>
+          <div class="boxBtn" @click="decrement">
+            <button class="btn2 flipSide-360"  >
+              Mines 1
+            </button>
+          </div>
+          </div>
         </div>
       </div>
       <div class="box box2"></div>
@@ -42,12 +51,15 @@ export default {
   methods: {
     increment() {
       this.$store.commit('increment');
+    },
+    decrement() {
+      this.$store.commit('decrement');
     }
   }
 }
 </script>
 
-<style>
+<style scope>
 
 .root {
   display: flex;
@@ -57,16 +69,10 @@ export default {
   height: 100vh;
   padding: 0px 24px;
   margin-bottom: 12px;
-  border: solid green;
 
 }
 
-
-
-
-
 .container {
- border: solid blue;
  width: 100%;
  height: 100%;
  display: grid;
@@ -76,8 +82,8 @@ export default {
  "div1 div2 aside"
  "div3 div4 aside"
  "div5 div5 aside";
-
- padding: 12px;
+ gap: 12px;
+ padding: 5px;
 }
 
 .box {
@@ -86,14 +92,68 @@ export default {
   min-height: 10px;
 }
 
+
 .box1 {
  grid-area: div1;
  width: auto;
+ padding: 12px;
+}
+
+.boxCounter{
+  width: auto;
+}
+
+.spanCounter {
+  color: green;
+  font-weight: 600;
+  border: solid 1px;
+  padding: 2px 2px 0px 2px;
+}
+
+
+
+.boxBtns {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+
+}
+
+.boxBtn {
+  width: 100%;
+}
+
+.btn1, .btn2 {
+  width: 100%;
+  color:blue;
+  border-radius: 5px;
+}
+
+.btn1 {
+  background: rgb(91, 150, 91);
+}
+
+.btn2 {
+  background: rgb(238, 255, 0);
+}
+
+
+.flipSide-360{
+    transition: .5s, color .10s;
+        -webkit-transition: .5s, color .10s;
+        -moz-transition: .5s, color .10s;
+}
+.flipSide-360:active{
+    transform: rotateY(360deg);
+        -webkit-transform: rotateY(360deg);
+        -moz-transform: rotateY(360deg);
 }
 
 .box2 {
   grid-area: div2;
-
 }
 
 .box3 {
@@ -143,14 +203,4 @@ export default {
   background: rgb(223, 58, 83);
 }
 
-
-.boxCounter{
-  width: 200px;
-  border: solid;
-  display: absolute;
-}
-
-.spanCounter {
-  color: green
-}
 </style>

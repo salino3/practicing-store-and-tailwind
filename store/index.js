@@ -1,6 +1,6 @@
 
 export const state = () => ({
-   title: "Test",
+   title: "Counter",
    counter: 0
  });
 
