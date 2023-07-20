@@ -101,6 +101,8 @@ export default {
 
 .boxCounter{
   width: auto;
+  font-family: cursive;
+  font-size: larger;
 }
 
 .spanCounter {

@@ -1,5 +1,5 @@
 <template>
- <h1>
+ <h1 class="title">
   {{ title }}
  </h1>
 </template>
@@ -13,4 +13,9 @@ export default {
 
 <style lang="css" scope>
 
+.title {
+ font-family: cursive;
+ font-size: 32px;
+ margin: 8px;
+}
 </style>
