@@ -26,10 +26,14 @@ button {
 
 @layer base {
   .default {
-  background: #9A8C98;
-  height: 100vh;
-  width: 100wh;
-  color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #9A8C98;
+    color: white;
+    min-height: 100vh;
+    height: auto;
+    width: 100wh;
   }
 
   .auth {
